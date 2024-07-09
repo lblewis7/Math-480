@@ -80,4 +80,9 @@ def predict(model, single_input):
     """
     t = parenthesization_to_tensor(single_input)
     output = model(t, mask=padding_mask(t))
+
+    #awawawa = torch.select(output, 0, 0)
+    #awawawawawa = torch.argmax(torch.select(output, 0, 0))
+    #print(f"PREDCTION: {output} )-( {awawawa} )-( {awawawawawa}")
+
     return torch.argmax(torch.select(output, 0, 0))
